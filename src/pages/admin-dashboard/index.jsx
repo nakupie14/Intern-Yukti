@@ -9,8 +9,16 @@ import QuickActionTiles from "./component/QuickActionTiles.jsx";
 import ActivityFeed from './component/ActivityFeed';
 import AlertNotifications from './component/alertNotification';
 import NavigationSidebar from './component/NavigationSidebar.jsx';
+import AIAllocationPortal from './component/AIAllocationPortal';
+import Icon from '../../components/AppIcon';
+
+
 
 const AdminDashboard = () => {
+const [students, setStudents] = useState([]);
+const [internships, setInternships] = useState([]);
+const [allocations, setAllocations] = useState([]);
+const [showAIPortal, setShowAIPortal] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [metricsData, setMetricsData] = useState(null);
   const [analyticsData, setAnalyticsData] = useState(null);
@@ -162,6 +170,49 @@ const AdminDashboard = () => {
       setAnalyticsData(mockAnalytics);
       setActivities(mockActivities);
       setAlerts(mockAlerts);
+      // Mock students data
+// Mock students data for AI allocation
+      const mockStudents = Array.from({ length: 50 }, (_, i) => ({
+        id: `S${i + 1}`,
+        name: `Student ${i + 1}`,
+        email: `student${i + 1}@example.com`,
+        phone: `+91 ${9000000000 + i}`,
+        qualification: ['B.Tech', 'BBA', 'B.Com', 'B.Sc', 'MBA'][i % 5],
+        cgpa: (7 + Math.random() * 3).toFixed(2),
+        district: ['Mumbai', 'Aspirational District A', 'Delhi', 'Aspirational District B', 'Bangalore', 'Rural District C'][i % 6],
+        isFromRural: i % 3 === 0,
+        socialCategory: ['General', 'OBC', 'SC', 'ST'][i % 4],
+        gender: ['Male', 'Female', 'Other'][i % 3],
+        skills: ['Python', 'JavaScript', 'Communication', 'Data Analysis', 'React', 'Node.js'].slice(0, 2 + Math.floor(Math.random() * 3)),
+        sectorInterest: ['Technology', 'Finance', 'Healthcare', 'Marketing', 'Manufacturing'].slice(i % 2, (i % 2) + 2),
+        locationPreference: ['Mumbai', 'Delhi', 'Bangalore', 'Any'][i % 4],
+        resumeText: `Experienced in technology with various skills`,
+        hasParticipated: i > 45
+      }));
+
+      const mockInternships = Array.from({ length: 15 }, (_, i) => ({
+        id: `I${i + 1}`,
+        title: `${['Technology', 'Finance', 'Healthcare', 'Marketing', 'Manufacturing'][i % 5]} Intern`,
+        company: `Company ${String.fromCharCode(65 + i)}`,
+        sector: ['Technology', 'Finance', 'Healthcare', 'Marketing', 'Manufacturing'][i % 5],
+        location: ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Pune'][i % 5],
+        slots: 3 + Math.floor(Math.random() * 3),
+        duration: '3 months',
+        stipend: `₹${(10000 + Math.random() * 15000).toFixed(0)}`,
+        requiredSkills: ['Python', 'JavaScript', 'Communication', 'Excel', 'Marketing'].slice(0, 2 + Math.floor(Math.random() * 2)),
+        preferredQualification: ['B.Tech', 'BBA', 'B.Com', 'B.Sc', 'MBA'][i % 5],
+        description: `Exciting opportunity in the field`
+      }));
+
+      setStudents(mockStudents);
+      setInternships(mockInternships);
+
+
+// Mock internships data
+
+
+setStudents(mockStudents);
+setInternships(mockInternships);
     } catch (error) {
       console.error('Failed to load dashboard data:', error);
     } finally {
@@ -291,20 +342,101 @@ const AdminDashboard = () => {
               onTimeRangeChange={handleTimeRangeChange}
             />
           </div>
+          {/* AI Allocation Portal Section */}
+{/* AI Allocation Portal */}
+          {!showAIPortal && (
+            <div className="mb-8 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl p-6 animate-fade-in">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                    <Icon name="Brain" size={24} />
+                    AI-Powered Internship Allocation
+                  </h3>
+                  <p className="text-purple-700">
+                    Use machine learning to match {students.length} students with {internships.length} internships
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowAIPortal(true)}
+                  className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
+                >
+                  <Icon name="Sparkles" size={20} />
+                  Launch AI Portal
+                </button>
+              </div>
+            </div>
+          )}
+
+          {showAIPortal && (
+            <div className="mb-8 animate-fade-in">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+                  <Icon name="Brain" size={28} className="text-purple-600" />
+                  AI Allocation Engine
+                </h2>
+                <button
+                  onClick={() => setShowAIPortal(false)}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors flex items-center gap-2"
+                >
+                  <Icon name="ArrowLeft" size={16} />
+                  Back to Dashboard
+                </button>
+              </div>
+              <AIAllocationPortal
+                students={students}
+                internships={internships}
+                onAllocationsUpdate={(newAllocations) => {
+                  setAllocations(newAllocations);
+                  console.log('Allocations completed:', newAllocations.length);
+                }}
+              />
+            </div>
+          )}
+
+{/* AI Allocation Portal */}
+{showAIPortal && (
+  <div className="mb-8 animate-fade-in">
+    <div className="flex justify-between items-center mb-4">
+      <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+        <Icon name="Brain" size={28} className="text-purple-600" />
+        AI Allocation Engine
+      </h2>
+      <button
+        onClick={() => setShowAIPortal(false)}
+        className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors flex items-center gap-2"
+      >
+        <Icon name="ArrowLeft" size={16} />
+        Back to Dashboard
+      </button>
+    </div>
+    <AIAllocationPortal
+      students={students}
+      internships={internships}
+      onAllocationsUpdate={(newAllocations) => {
+        setAllocations(newAllocations);
+        console.log('Allocations completed:', newAllocations.length);
+      }}
+    />
+  </div>
+)}
 
           {/* Quick Actions and Activity Feed */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <QuickActionTiles />
-            <ActivityFeed activities={activities} />
+<QuickActionTiles onAIAllocationClick={() => setShowAIPortal(true)} />            <ActivityFeed activities={activities} />
           </div>
         </div>
       </main>
 
       {/* Navigation Sidebar for Mobile */}
-      <NavigationSidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
+     <NavigationSidebar
+  isOpen={isSidebarOpen}
+  onClose={() => setIsSidebarOpen(false)}
+  onNavigate={(itemId) => {
+    if (itemId === 'ai-allocation') {
+      setShowAIPortal(true);
+    }
+  }}
+/>
 
       {/* Voice Input Toggle */}
       <VoiceInputToggle 
