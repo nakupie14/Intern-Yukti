@@ -37,7 +37,7 @@ const EducationLevelStep = ({ selectedLevel, onLevelSelect, onNext, onPrevious }
           What's your education level?
         </h2>
         <p className="text-muted-foreground">
-          Help us understand your academic background to provide better recommendations
+          Help us understand your academic background to provide better allocations
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">

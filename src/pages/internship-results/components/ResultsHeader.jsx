@@ -12,14 +12,14 @@ const ResultsHeader = ({
   const getHeaderContent = () => {
     if (assessmentType === 'resume') {
       return {
-        title: 'Your Resume-Based Recommendations',
+  title: 'Your Resume-Based Allocations',
         subtitle: `Based on your uploaded resume, we've found personalized internship opportunities that match your skills and experience.`,
         icon: 'FileText'
       };
     }
     
     return {
-      title: 'Your Personalized Recommendations',
+  title: 'Your Personalized Allocations',
       subtitle: `Based on your assessment responses, we've curated internship opportunities that align with your interests and goals.`,
       icon: 'Target'
     };
@@ -60,7 +60,7 @@ const ResultsHeader = ({
               iconName="RefreshCw"
               iconPosition="left"
             >
-              {isRefreshing ? "Refreshing..." : "Get New Recommendations"}
+              {isRefreshing ? "Refreshing..." : "Get New Allocations"}
             </Button>
             
             <Link to="/questionnaire-flow">

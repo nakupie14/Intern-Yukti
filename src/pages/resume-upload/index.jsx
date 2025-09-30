@@ -198,11 +198,11 @@ const ResumeUpload = () => {
       case 'processing':
         return 'Our AI is extracting skills, education, and experience from your resume';
       case 'completed':
-        return 'Review the extracted information and get personalized recommendations';
+  return 'Review the extracted information and get personalized allocations';
       case 'error':
         return 'We encountered an issue processing your resume';
       default:
-        return 'Get instant internship recommendations powered by AI analysis of your resume';
+  return 'Get instant internship allocations powered by AI analysis of your resume';
     }
   };
 
@@ -328,7 +328,7 @@ const ResumeUpload = () => {
                   Why Upload Your Resume?
                 </h2>
                 <p className="text-muted-foreground">
-                  Get instant, personalized recommendations based on your actual experience
+                  Get instant, personalized allocations based on your actual experience
                 </p>
               </div>
 
@@ -347,7 +347,7 @@ const ResumeUpload = () => {
                   {
                     icon: 'Target',
                     title: 'Personalized Matches',
-                    description: 'Get recommendations tailored to your unique profile'
+                    description: 'Get allocations tailored to your unique profile'
                   }
                 ]?.map((feature, index) => (
                   <div key={index} className="text-center p-6 bg-card border border-border rounded-lg">

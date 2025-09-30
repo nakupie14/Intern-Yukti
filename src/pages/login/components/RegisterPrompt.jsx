@@ -18,7 +18,7 @@ const RegisterPrompt = () => {
             New to InternYukti?
           </h3>
           <p className="text-muted-foreground">
-            Create an account to save your internship preferences, track applications, and get personalized recommendations.
+            Create an account to save your internship preferences, track applications, and get personalized allocations.
           </p>
         </div>
 

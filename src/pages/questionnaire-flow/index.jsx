@@ -187,7 +187,7 @@ const QuestionnaireFlow = () => {
               </h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Answer a few questions to get personalized internship recommendations tailored just for you
+              Answer a few questions to get personalized internship allocations tailored just for you
             </p>
           </div>
 

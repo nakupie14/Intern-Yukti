@@ -22,7 +22,7 @@ const LoginHeader = () => {
           Welcome Back!
         </h1>
         <p className="text-muted-foreground text-lg">
-          Sign in to access your personalized internship recommendations
+          Sign in to access your personalized internship allocations
         </p>
       </div>
     </div>

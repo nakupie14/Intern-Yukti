@@ -12,7 +12,7 @@ const LandingPage = () => {
     const updatePageTitle = () => {
       const currentLanguage = localStorage.getItem('language') || 'en';
       const titles = {
-        en: 'InternYukti - Smart Internship Recommendations for Every Student',
+  en: 'InternYukti - Smart Internship Allocations for Every Student',
         hi: 'InternYukti - हर छात्र के लिए स्मार्ट इंटर्नशिप सिफारिशें',
         ta: 'InternYukti - ஒவ்வொரு மாணவருக்கும் ஸ்மார்ட் இன்டர்ன்ஷிப் பரிந்துரைகள்',
         te: 'InternYukti - ప్రతి విద్యార్థికి స్మార్ట్ ఇంటర్న్‌షిప్ సిఫార్సులు',
@@ -63,7 +63,7 @@ const LandingPage = () => {
                 <span className="text-xl font-bold text-foreground">InternYukti</span>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                Empowering students across India with AI-powered internship recommendations 
+                Empowering students across India with AI-powered internship allocations 
                 in their preferred language.
               </p>
               <div className="flex space-x-4">

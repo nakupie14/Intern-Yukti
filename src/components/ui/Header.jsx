@@ -26,7 +26,7 @@ const Header = () => {
       icon: 'Home'
     },
     { 
-      label: 'Get Recommendations', 
+  label: 'Get Allocations', 
       path: '/questionnaire-flow',
       icon: 'Target',
       subItems: [
@@ -108,7 +108,7 @@ const Header = () => {
                   )}
                 </Link>
 
-                {/* Dropdown for Get Recommendations */}
+                {/* Dropdown for Get Allocations */}
                 {item?.subItems && (
                   <div className="absolute top-full left-0 mt-1 w-48 bg-popover border border-border rounded-md shadow-modal opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="py-1">

@@ -27,7 +27,7 @@ const EmptyState = ({
         return {
           icon: 'AlertCircle',
           title: 'Something Went Wrong',
-          description: `We're having trouble loading your internship recommendations. Please try again or check your internet connection.`,
+          description: `We're having trouble loading your internship allocations. Please try again or check your internet connection.`,
           primaryAction: {
             label: 'Try Again',
             action: onRetry,

@@ -167,7 +167,7 @@ const InternshipResults = () => {
     setIsRefreshing(true);
     
     try {
-      // Simulate generating new recommendations
+  // Simulate generating new allocations
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Shuffle the existing internships to simulate new results
@@ -384,7 +384,7 @@ const InternshipResults = () => {
                 iconName="RefreshCw"
                 iconPosition="left"
               >
-                Load More Recommendations
+                Load More Allocations
               </Button>
             </div>
           )}

@@ -8,11 +8,11 @@ const HeroSection = () => {
 
   const content = {
     en: {
-      tagline: "Smart Internship Recommendations for Every Student",
+  tagline: "Smart Internship Allocations for Every Student",
       subtitle: "Discover personalized internship opportunities through AI-powered assessment and smart resume analysis",
       startQuestionnaire: "Start Questionnaire",
       uploadResume: "Upload Resume for Instant Suggestions",
-      questionnaireDesc: "Answer a few questions to get personalized recommendations",
+  questionnaireDesc: "Answer a few questions to get personalized allocations",
       resumeDesc: "Upload your resume for instant AI-powered suggestions"
     },
     hi: {

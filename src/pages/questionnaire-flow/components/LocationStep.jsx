@@ -229,7 +229,7 @@ const LocationStep = ({ selectedLocation, onLocationChange, onNext, onPrevious, 
           iconPosition="right"
           className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
         >
-          Get My Recommendations
+          Get My Allocations
         </Button>
       </div>
     </div>

@@ -246,7 +246,7 @@ const ResumeSummaryCard = ({ resumeData, onEdit, onConfirm, className = '' }) =>
         <div className="p-6 border-t border-border bg-surface/50">
           <div className="flex items-center justify-between">
             <p className="text-sm text-muted-foreground">
-              Review the extracted information and proceed to get recommendations
+              Review the extracted information and proceed to get allocations
             </p>
             <Button
               variant="default"
@@ -255,7 +255,7 @@ const ResumeSummaryCard = ({ resumeData, onEdit, onConfirm, className = '' }) =>
               iconPosition="right"
               onClick={() => onConfirm?.(resumeData)}
             >
-              Get Recommendations
+              Get Allocations
             </Button>
           </div>
         </div>

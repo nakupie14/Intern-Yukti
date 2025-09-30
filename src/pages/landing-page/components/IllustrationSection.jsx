@@ -25,7 +25,7 @@ const IllustrationSection = () => {
         },
         {
           title: "Perfect Matches",
-          description: "Get personalized internship recommendations that align with your career aspirations",
+          description: "Get personalized internship allocations that align with your career aspirations",
           icon: "Target",
           illustration: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop"
         },

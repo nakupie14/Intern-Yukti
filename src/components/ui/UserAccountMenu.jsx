@@ -65,7 +65,7 @@ const UserAccountMenu = ({ className = '' }) => {
       label: 'My Results',
       icon: 'TrendingUp',
       path: '/internship-results',
-      description: 'View your internship recommendations'
+  description: 'View your internship allocations'
     },
     {
       label: 'Saved Internships',
