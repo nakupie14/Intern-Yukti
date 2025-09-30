@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Settings, Brain, Sparkles, Mail, BarChart3, RefreshCw, ArrowLeft } from 'lucide-react';
 import { BarChart, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { NotificationService } from './NotificationService'; // Import the service
+import { NotificationService } from './NotificationService.js'; // Import the service
 
 // AI Matching Engine based on the Problem Statement
 const AIMatchingEngine = {
